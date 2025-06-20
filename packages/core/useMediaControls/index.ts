@@ -175,7 +175,7 @@ export function useMediaControls(target: MaybeRef<HTMLMediaElement | null | unde
   const tracks = deepRef<UseMediaTextTrack[]>([])
   const selectedTrack = shallowRef<number>(-1)
   const isPictureInPicture = shallowRef(false)
-  const muted = shallowRef(false)
+  const muted = shallowRef(target.value?.muted ?? false)
 
   const supportsPictureInPicture = document && 'pictureInPictureEnabled' in document
 
